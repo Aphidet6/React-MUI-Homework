@@ -9,20 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { createTheme } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: grey[50],
-      contrastText: grey[900],
-    },
-    secondary: {
-      main: grey[900],
-    },
-  },
-});
 
 const pages = ['Home', 'Product', 'Contact'];
 
@@ -44,7 +31,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: theme.palette.primary.main }}>
+    <AppBar position="static" sx={{ backgroundColor: 'white' ,  marginBottom: 10}}  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -57,7 +44,7 @@ function ResponsiveAppBar() {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
-              color: '{theme.palette.primary.contrastText}',
+              color: 'default',
               textDecoration: 'none',
             }}
           >
@@ -71,7 +58,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color='{theme.palette.secondary.main}'
+              color='default'
             >
               <MenuIcon />
             </IconButton>
@@ -92,8 +79,8 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu} href={`/${page}`} >
+                  <Typography sx={{ textAlign: 'center' }} >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -109,7 +96,7 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
-              color: '{theme.palette.text.primary}',
+              color: 'default',
               textDecoration: 'none',
             }}
           >
@@ -121,6 +108,7 @@ function ResponsiveAppBar() {
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'black', display: 'block' }}
+                href={`/${page}`}
               >
                 {page}
               </Button>
