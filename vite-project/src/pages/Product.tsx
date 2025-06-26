@@ -1,7 +1,10 @@
+import GridProduct from '../components/GridProduct'
 
 function Product() {
   return (
-    <div>Product</div>
+    <div>
+      <GridProduct />
+      </div>
   )
 }
 
