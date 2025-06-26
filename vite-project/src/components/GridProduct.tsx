@@ -2,7 +2,7 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CardProduct from '../components/CardProduct'
-
+import GridProductName from '../components/GridProductName'
 
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: '#fff',
@@ -22,7 +22,6 @@ export default function GridProduct() {
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      minWidth: '750px',
 
       }}>
 
@@ -31,11 +30,15 @@ export default function GridProduct() {
         {/* เมื่อหน้าจอมีขนาดเล็กกว่า 600px (xs) จะมี 1 คอลัมน์ */}
         {/* เมื่อหน้าจอมีขนาดตั้งแต่ 600px (sm) ขึ้นไป จะมี 12 คอลัมน์ */}
         
-          <Grid size={6} sx={{}}>
+          <Grid size={6}>
             <CardProduct />
           </Grid>
-          <Grid size={6}>
-            size=4
+          <Grid size={6}  sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <GridProductName />
           </Grid>
           <Grid size={12}>
             size=4
