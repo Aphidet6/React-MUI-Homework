@@ -9,19 +9,19 @@ import Box from '@mui/material/Box';
 
 export default function CardProduct() {
   return (
-    <Card sx={{minWidth: 200 ,maxWidth: 900,  borderRadius: 0, padding: 0, border: 0}}>
+    <Card sx={{minWidth: 200 ,maxWidth: 900,  borderRadius: 0, padding: 0, border: 'none'}}>
       <CardMedia
         component="img"
         alt="thumbnail"
         height="auto"
         image={Camera}
       />
-      <CardContent sx={{ display: 'flex',  justifyContent: 'start', border: 0}}>
-        <Typography variant="body1" sx={{ color: 'text.secondary', fontWeight: 'Bold', border:0 }} >
+      <CardContent sx={{ display: 'flex',  justifyContent: 'start', border: 'none'}}>
+        <Typography variant="body1" sx={{ color: 'text.secondary', fontWeight: 'Bold', border: 'none' }} >
           Stock(75/100)
         </Typography>
       </CardContent>
-              <Box sx={{ position: 'relative', flexGrow: 1, ml: 2, alignSelf: 'center' }}>
+              <Box sx={{ position: 'relative', flexGrow: 1, ml: 2, alignSelf: 'center', border: 'none' }}>
                 <LinearProgress
                   variant="determinate"
                   value={75}

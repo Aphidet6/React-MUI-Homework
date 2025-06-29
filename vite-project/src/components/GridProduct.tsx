@@ -3,16 +3,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import CardProduct from '../components/CardProduct'
 import GridProductName from '../components/GridProductName'
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: '#fff',
-//   ...theme.typography.body2,
-//   textAlign: 'center',
-//   color: (theme.vars ?? theme).palette.text.secondary,
-//   ...theme.applyStyles('dark', {
-//     backgroundColor: '#1A2027',
-//   }),
-// }));
+import Rating from './Rating'
+import Reviews from './Reviews'
 
 export default function GridProduct() {
   return (
@@ -22,7 +14,7 @@ export default function GridProduct() {
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-
+      padding: '0 10%'
       }}>
 
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 12, md: 12 }} sx={{ padding: 0 }}>
@@ -41,10 +33,10 @@ export default function GridProduct() {
             <GridProductName />
           </Grid>
           <Grid size={12}>
-            size=4
+            <Rating />
           </Grid>
           <Grid size={12}>
-            size=8
+            <Reviews />
           </Grid>
       </Grid>
     </Box>
