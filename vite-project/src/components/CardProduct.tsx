@@ -3,9 +3,29 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Camera from '../assets/Camera.jpg';
-import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
+import { styled } from '@mui/material/styles';
 
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 10,
+  borderRadius: 5,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor: theme.palette.grey[200],
+    ...theme.applyStyles('dark', {
+      backgroundColor: theme.palette.grey[800],
+    }),
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 5,
+    backgroundColor: '#1a90ff',
+    ...theme.applyStyles('dark', {
+      backgroundColor: '#308fe8',
+    }),
+  },
+}));
 
 export default function CardProduct() {
   return (
@@ -21,13 +41,14 @@ export default function CardProduct() {
           Stock(75/100)
         </Typography>
       </CardContent>
-              <Box sx={{ position: 'relative', flexGrow: 1, ml: 2, alignSelf: 'center', border: 'none' }}>
-                <LinearProgress
-                  variant="determinate"
-                  value={75}
-                  sx={{ height: 15, borderRadius: 5, marginBottom: 2, marginRight: 2 }}
-                />
-                <Typography
+              <Box sx={{ position: 'relative', flexGrow: 1, m: 2, alignSelf: 'center', border: 'none' }}>
+                <Stack spacing={2} sx={{ flexGrow: 1 }}>
+                  <BorderLinearProgress 
+                    variant="determinate"
+                    value={75}
+                    sx={{ height: 15, borderRadius: 5, marginBottom: 2, marginRight: 2 }} />
+                </Stack>
+                 <Typography
                   variant="body2"
                   sx={{
                     position: 'absolute',

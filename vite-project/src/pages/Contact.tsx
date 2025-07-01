@@ -1,8 +1,8 @@
-import React from 'react'
+import Checkout from '../pages/Checkout'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div><Checkout /></div>
   )
 }
 
