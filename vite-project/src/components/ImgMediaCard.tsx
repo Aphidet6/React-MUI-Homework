@@ -5,10 +5,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Camera from '../assets/Camera.jpg';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Box from '@mui/material/Box';
 
 
 export default function ImgMediaCard() {
   return (
+    
     <Card sx={{minWidth: 200}}>
       <CardMedia
         component="img"
@@ -22,10 +25,21 @@ export default function ImgMediaCard() {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'space-between',p: 2}}>
-        <div>
-          <Button variant="outlined" sx={{borderTopRightRadius: 0, borderBottomRightRadius: 0}}>View</Button>
-          <Button variant="outlined" sx={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}}>Edit</Button>
-        </div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      <ButtonGroup variant="outlined" aria-label="Basic button group">
+        <Button>View</Button>
+        <Button>Edit</Button>
+      </ButtonGroup>
+    </Box> 
         <Typography variant="body2" sx={{ color: 'text.secondary', mr:2 }} >9 mins</Typography>
       </CardActions>
     </Card>
