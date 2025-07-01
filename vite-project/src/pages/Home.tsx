@@ -2,8 +2,7 @@ import ResponsiveGrid from '../components/ResponsiveGrid'
 
 function Home() {
   return (
-    <div>
-        
+    <div> 
         <ResponsiveGrid />
     </div>
   )

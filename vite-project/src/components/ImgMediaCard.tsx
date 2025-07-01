@@ -21,11 +21,11 @@ export default function ImgMediaCard() {
           This is a card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
         </Typography>
       </CardContent>
-      <CardActions sx={{ display: 'flex', justifyContent: 'space-between', gap: 0 }}>
-        <CardActions sx={{ display: 'flex', justifyContent: 'start' }}>
-          <Button variant="outlined">View</Button>
-          <Button variant="outlined" sx={{ ml: 0 }}>Edit</Button>
-        </CardActions>
+      <CardActions sx={{ display: 'flex', justifyContent: 'space-between',p: 2}}>
+        <div>
+          <Button variant="outlined" sx={{borderTopRightRadius: 0, borderBottomRightRadius: 0}}>View</Button>
+          <Button variant="outlined" sx={{borderTopLeftRadius: 0, borderBottomLeftRadius: 0}}>Edit</Button>
+        </div>
         <Typography variant="body2" sx={{ color: 'text.secondary', mr:2 }} >9 mins</Typography>
       </CardActions>
     </Card>

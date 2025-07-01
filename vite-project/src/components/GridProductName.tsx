@@ -4,6 +4,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import { Route, Routes } from 'react-router-dom'
+import Checkout from '../pages/Checkout'
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -27,7 +30,10 @@ export default function GridProductName() {
             <p>Quantity:</p>
             <br />
             <TextField defaultValue={1} sx={{width:'100%', mb:2}}/>
-            <Button variant='contained'>Add to Cart</Button>
+            <Routes>
+              <Route path="/Checkout" element={<Checkout />} />
+            </Routes>
+            <Button variant='contained' href='/Checkout'>Add to Cart</Button>
           </Item>
 
         </Grid>
